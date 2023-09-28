@@ -19,8 +19,13 @@ public class QuestServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession currentSession = request.getSession();
+        String remoteAddr = request.getRemoteAddr();
+        currentSession.setAttribute("remoteAddr", remoteAddr);
         if (currentSession.getAttribute("username") == null) {
             currentSession.setAttribute("username", request.getParameter("username"));
+        }
+        if (currentSession.getAttribute("gamesCount") == null) {
+            currentSession.setAttribute("gamesCount", 0);
         }
 
         Long id = (request.getParameter("question") != null) ? Long.parseLong(request.getParameter("question")) : 1L;
@@ -31,6 +36,8 @@ public class QuestServlet extends HttpServlet {
             if (Boolean.parseBoolean(request.getParameter("correct"))) {
                 request.setAttribute("victory", true);
             } else request.setAttribute("victory", false);
+            int gamesCount = Integer.parseInt(String.valueOf(currentSession.getAttribute("gamesCount")));
+            currentSession.setAttribute("gamesCount", ++gamesCount);
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/end.jsp");
             requestDispatcher.forward(request, response);
         }

@@ -33,6 +33,29 @@
                     crossorigin="anonymous"></script>
         </div>
     </div>
+    <div class="row align-items-end">
+    <div class = "col align-self-start">
+        <table class="table text-left">
+            <tbody>
+            <tr>
+                <td colspan="2">Статистика:</td>
+            </tr>
+            <tr>
+                <td>IP-address:</td>
+                <td>${remoteAddr}</td>
+            </tr>
+            <tr>
+                <td>Имя в игре:</td>
+                <td>${username}</td>
+            </tr>
+            <tr>
+                <td>Количество игр:</td>
+                <td>${gamesCount}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
 </div>
 </body>
 </html>
