@@ -19,7 +19,7 @@ public class QuestServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession currentSession = request.getSession();
-        if(currentSession.getAttribute("username")==null){
+        if (currentSession.getAttribute("username") == null) {
             currentSession.setAttribute("username", request.getParameter("username"));
         }
 
@@ -27,10 +27,10 @@ public class QuestServlet extends HttpServlet {
         GameService gameService = new GameService();
 
 
-        if (request.getParameter("end")!=null){
-            if (Boolean.parseBoolean(request.getParameter("correct"))){
-                request.setAttribute("victory",true);
-            } else request.setAttribute("victory",false);
+        if (request.getParameter("end") != null) {
+            if (Boolean.parseBoolean(request.getParameter("correct"))) {
+                request.setAttribute("victory", true);
+            } else request.setAttribute("victory", false);
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/end.jsp");
             requestDispatcher.forward(request, response);
         }

@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 public interface GameRepository {
-    Quest  readQuest() throws IOException, URISyntaxException;
+    Quest readQuest() throws IOException, URISyntaxException;
+
     Question getQuestionById(Long id);
+
     public int getQuestSize();
 }

@@ -3,6 +3,7 @@ package kz.javarush.kamenov.quest.entity;
 import lombok.*;
 
 import java.util.List;
+
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor

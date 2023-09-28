@@ -9,11 +9,11 @@ public class GameService {
     GameRepository gameRepository = new GameRepositoryImpl();
 
 
-    public Question getQuestionById(Long id){
+    public Question getQuestionById(Long id) {
         return gameRepository.getQuestionById(id);
     }
 
-    public int getQuestSize(){
+    public int getQuestSize() {
         return gameRepository.getQuestSize();
     }
 

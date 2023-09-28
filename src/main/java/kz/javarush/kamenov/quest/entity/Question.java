@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIdentityInfo(scope=Question.class,generator = ObjectIdGenerators.IntSequenceGenerator.class,property = "Question_Id")
+@JsonIdentityInfo(scope = Question.class, generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "Question_Id")
 public class Question {
     Long id;
     String text;

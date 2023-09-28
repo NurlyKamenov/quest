@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-public class GameRepositoryImpl implements GameRepository{
+public class GameRepositoryImpl implements GameRepository {
 
     Quest quest;
 
@@ -42,19 +42,19 @@ public class GameRepositoryImpl implements GameRepository{
 
     @Override
     public Question getQuestionById(Long id) {
-    Question result = null;
-        if (quest!=null){
+        Question result = null;
+        if (quest != null) {
 
-            for (Question question:quest.getQuestions()
-                 ) {
-                if (question.getId() .equals(id))
-                    result=question;
+            for (Question question : quest.getQuestions()
+            ) {
+                if (question.getId().equals(id))
+                    result = question;
             }
         }
         return result;
     }
 
-    public int getQuestSize(){
+    public int getQuestSize() {
         return quest.getQuestions().size();
     }
 }
