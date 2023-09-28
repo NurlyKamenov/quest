@@ -1,0 +1,63 @@
+{
+  "id": 1,
+  "text": "Квест НЛО",
+  "questions": [
+    {
+      "Question_Id": 1,
+      "id": 1,
+      "text": "Принять вызов НЛО",
+      "answers": [
+        {
+          "id": 1,
+          "text": "Принять вызов",
+          "correctAnswer": true,
+          "nextQuestion": {
+            "Question_Id": 2,
+            "id": 2,
+            "text": "Ты принял вызов. Поднимаешься на мостик к капитану?",
+            "answers": [
+              {
+                "id": 3,
+                "text": "Подняться на мостик",
+                "correctAnswer": true,
+                "nextQuestion": {
+                  "Question_Id": 3,
+                  "id": 3,
+                  "text": "Ты поднялся на мостик. Ты кто?",
+                  "answers": [
+                    {
+                      "id": 5,
+                      "text": "правду о себе",
+                      "correctAnswer": true,
+                      "nextQuestion": null
+                    },
+                    {
+                      "id": 6,
+                      "text": "Солгать о себе",
+                      "correctAnswer": false,
+                      "nextQuestion": null
+                    }
+                  ]
+                }
+              },
+              {
+                "id": 4,
+                "text": "Отказаться подниматься на мостик",
+                "correctAnswer": false,
+                "nextQuestion": null
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "text": "Отклонить вызов",
+          "correctAnswer": false,
+          "nextQuestion": null
+        }
+      ]
+    },
+    2,
+    3
+  ]
+}
