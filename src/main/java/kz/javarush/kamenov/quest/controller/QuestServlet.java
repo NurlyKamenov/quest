@@ -24,7 +24,7 @@ public class QuestServlet extends HttpServlet {
         }
 
         Long id = (request.getParameter("question") != null) ? Long.parseLong(request.getParameter("question")) : 1L;
-        GameService gameService = new GameService();
+        GameService gameService = GameService.getInstance();
 
 
         if (request.getParameter("end") != null) {

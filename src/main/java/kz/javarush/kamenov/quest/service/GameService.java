@@ -7,8 +7,13 @@ import kz.javarush.kamenov.quest.repository.GameRepositoryImpl;
 
 public class GameService {
     GameRepository gameRepository = new GameRepositoryImpl();
-
-
+    private static GameService instance;
+    public static GameService getInstance() {
+        if (instance == null) {
+            instance = new GameService();
+        }
+        return instance;
+    }
     public Question getQuestionById(Long id) {
         return gameRepository.getQuestionById(id);
     }

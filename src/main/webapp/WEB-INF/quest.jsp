@@ -8,28 +8,30 @@
 </head>
 <body>
 <div class="container">
-    <div class="col-md-auto">
-        <h1> ${sessionScope.username} ${requestScope.question.getText()}</h1>
-        <br>
-        <br>
-        <c:forEach items="${requestScope.question.getAnswers()}" var="answer">
-            <c:choose>
+    <div class="row align-items-center">
+        <div class="col-md-auto">
+            <h1> ${sessionScope.username} ${requestScope.question.getText()}</h1>
+            <br>
+            <br>
+            <c:forEach items="${requestScope.question.getAnswers()}" var="answer">
+                <c:choose>
 
-                <c:when test="${empty answer.getNextQuestion().getId()}">
-                    <a href="/start?end=true&correct=${answer.getCorrectAnswer()}" type="button"
-                       class="btn btn-primary">${answer.getText()}</a>
-                </c:when>
-                <c:otherwise>
-                    <a href="/start?question=${answer.getNextQuestion().getId()}" type="button"
-                       class="btn btn-primary">${answer.getText()}</a>
-                </c:otherwise>
-            </c:choose>
-        </c:forEach>
+                    <c:when test="${empty answer.getNextQuestion().getId()}">
+                        <a href="/start?end=true&correct=${answer.getCorrectAnswer()}" type="button"
+                           class="btn btn-primary">${answer.getText()}</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="/start?question=${answer.getNextQuestion().getId()}" type="button"
+                           class="btn btn-primary">${answer.getText()}</a>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                    crossorigin="anonymous"></script>
+        </div>
     </div>
 </div>
 </body>
